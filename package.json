@@ -12,6 +12,7 @@
   "author": "Khan MiT 42",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.3.8",
     "ejs": "^5.0.2",
     "express": "^4.22.1",
     "nodemon": "^3.1.14"

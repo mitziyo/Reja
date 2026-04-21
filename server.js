@@ -14,17 +14,28 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 // 4 routing code
-app.get("/", function (req, res){
-    res.end("<h1> Hello World by Begzodali</h1>")
+// app.get("/", function (req, res){
+//     res.end("<h1> Hello World by Begzodali</h1>")
+// });
+
+// app.get("/hello", function (req, res){
+//     res.end("<h1> Hello khan How are u today?</h1>")
+// });
+
+// app.get("/place", function (req, res){
+//     res.end("<h1> The places that today you have to go!!!</h1>")
+// });
+app.post("/create-item", (req, res) => {
+    console.log(req.body);
+    res.json({test: "success"})
+})
+
+
+app.get("/", function (req, res) {
+    res.render("harid");
 });
 
-app.get("/hello", function (req, res){
-    res.end("<h1> Hello khan How are u today?</h1>")
-});
 
-app.get("/place", function (req, res){
-    res.end("<h1> The places that today you have to go!!!</h1>")
-});
 
 const server = http.createServer(app);
 let PORT = 3000;
