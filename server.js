@@ -1,5 +1,6 @@
 console.log("Hello Khan");
 const express = require("express");
+const res = require("express/lib/response");
 const app = express();
 const http = require("http");
 const fs = require("fs");
@@ -53,3 +54,4 @@ let PORT = 3000;
 server.listen(PORT, function () {
   console.log(`The server is running successfully on port: ${PORT}`);
 });
+                 
