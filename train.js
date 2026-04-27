@@ -1,14 +1,31 @@
-// MiT Task A
+// Task B 
 let count = 0;
-function number(word, letter){
-for(let i = 0; i <= word.length; i++ ) {
-    if(word[i] === letter) {
+function countDigits(word) {
+for(let i = 0; i <= word.length; i++) {
+    if(0 <= word[i] && word[i] <= "9") {
         count++
     }
 }
 return count;
 }
-console.log(number("engineer", "e"));
+
+console.log(countDigits("22222s2d2s2sd2sd2s2ds2d"))
+
+
+
+
+// // MiT Task A
+// let count = 0;
+// function number(word, letter){
+// for(let i = 0; i <= word.length; i++ ) {
+//     if(word[i] === letter) {
+//         count++
+//     }
+// }
+// return count;
+// }
+// console.log(number("engineer", "e"));
+
 
 
 
@@ -43,7 +60,7 @@ console.log(number("engineer", "e"));
 // console.log("passed here 0");
 // maslahatBering(70, (err, data) => {
 //   if (err) console.log("ERROR", err);
-// //   console.log("jaob:", data)
+ //   console.log("jaob:", data)
 //   else {
 //     console.log(data);
 //   }
