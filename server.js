@@ -1,57 +1,30 @@
-console.log("Hello Khan");
-const express = require("express");
-const res = require("express/lib/response");
-const app = express();
 const http = require("http");
-const fs = require("fs");
 
-let user;
-fs.readFile("database/user.json", "utf8", (err, data) => {
-  if (err) {
-    console.log("ERROR:", err);
-  } else {
-    user = JSON.parse(data);
-  }
-});
+const mongodb = require("mongodb");
 
-// 1 Krish code
-app.use(express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+let db;
+const connectionString =
+  "mongodb+srv://khan:VZasEarecYfVqVHx@cluster0.cgcf8jr.mongodb.net/?reja=Cluster0";
 
-// 2  Session code
-// 3 views code
-app.set("views", "views");
-app.set("view engine", "ejs");
-
-// 4 routing code
-// app.get("/", function (req, res){
-//     res.end("<h1> Hello World by Begzodali</h1>")
-// });
-
-// app.get("/hello", function (req, res){
-//     res.end("<h1> Hello khan How are u today?</h1>")
-// });
-
-// app.get("/place", function (req, res){
-//     res.end("<h1> The places that today you have to go!!!</h1>")
-// });
-app.post("/create-item", (req, res) => {
-  console.log(req.body);
-  res.json({ test: "success" });
-});
- 
-app.get("/author", (req, res) => {
-  res.render("author", { user: user });
-});
-
-app.get("/", function (req, res) {
-  res.render("reja");
-});
-
-const server = http.createServer(app);
-let PORT = 3000;
-server.listen(PORT, function () {
-  console.log(`The server is running successfully on port: ${PORT}, http://localhost:${PORT}`);
-});
-                                                                      
+mongodb.connect(
+  connectionString,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
+  (err, client) => {
+    if (err) console.log("ERROR on connection MongoDB");
+    else {
+      console.log("MongoDB connected successfully");
+      module.exports = client;
+      const app = require("./app");
+      const server = http.createServer(app);
+      let PORT = 3000;
+      server.listen(PORT, function () {
+        console.log(
+          `The server is running successfully on port: ${PORT}, http://localhost:${PORT}`,
+        );
+      });
+    }
+  },
+);
