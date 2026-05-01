@@ -30,6 +30,7 @@ class Shop {
 
 const shop = new Shop(4, 5, 2)
 
+
 shop.qoldiq()
 shop.qabul(4)
 shop.sotish(2)

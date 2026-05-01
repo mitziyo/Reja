@@ -13,7 +13,6 @@ function itemTemplate(item) {
         </li>`;
 }
 
-
 let createField = document.getElementById("create-field");
 document.getElementById("create-form").addEventListener("submit", function (e) {
   e.preventDefault();
@@ -30,4 +29,27 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
     .catch((err) => {
       console.log("Please !!! Try again");
     });
+});
+
+document.addEventListener("click", function (e) {
+  // delete oper
+  console.log(e.target);
+  if (e.target.classList.contains("delete-me")) {
+    if (confirm("are you delete?")) {
+      axios
+        .post("/delete-item", { id: e.target.getAttribute("data-id") })
+        .then((response) => {
+          console.log(response.data);
+          e.target.parentElement.parentElement.remove();
+        })
+        .catch((err) => {
+          console.log("Please Try again!");
+        });
+    }
+  }
+
+  // edit oper
+  if (e.target.classList.contains("edit-me")) {
+    alert("You pressed edit button");
+  }
 });
