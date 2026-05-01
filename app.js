@@ -19,16 +19,11 @@ app.set("view engine", "ejs");
 // 4 routing code
 
 app.post("/create-item", (req, res) => {
-  console.log("user entered /create-item")
+  console.log("user entered /create-item");
   console.log(req.body);
   const new_reja = req.body.reja;
   db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
-    if (err) {
-      console.log(err);
-      res.end("something went wrong");
-    } else {
-      res.end("successfully added");
-    }
+    res.json(data.ops[0]);
   });
 });
 
@@ -37,7 +32,7 @@ app.get("/author", (req, res) => {
 });
 
 app.get("/", function (req, res) {
-  console.log("user entered /")
+  console.log("user entered /");
   db.collection("plans")
     .find()
     .toArray((err, data) => {

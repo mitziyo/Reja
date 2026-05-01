@@ -1,15 +1,61 @@
-// Task B 
-let count = 0;
-function countDigits(word) {
-for(let i = 0; i <= word.length; i++) {
-    if(0 <= word[i] && word[i] <= "9") {
-        count++
+//   TASK-C
+const moment = require("moment")
+const time = moment().format("HH:MM")
+class Shop {
+
+    constructor(a, b, c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+
+
+
+    qoldiq() {
+        console.log(`Hozir ${time}da ${this.a}ta non, ${this.b}ta lagmon va ${this.c}ta cola mavjud`)
+    }
+
+    sotish(amount) {
+        this.a -= amount
+        console.log(`${amount} non sotildi`)
+    }
+
+
+
+    qabul(amount) {
+        this.c += amount
+        console.log(`${amount} cola qabul qlindi`)
     }
 }
-return count;
-}
 
-console.log(countDigits("22222s2d2s2sd2sd2s2ds2d"))
+const shop = new Shop(4, 5, 2)
+
+shop.qoldiq()
+shop.qabul(4)
+shop.sotish(2)
+shop.qoldiq()
+
+
+
+
+
+
+
+
+
+
+// Task B 
+// let count = 0;
+// function countDigits(word) {
+// for(let i = 0; i <= word.length; i++) {
+//     if(0 <= word[i] && word[i] <= "9") {
+//         count++
+//     }
+// }
+// return count;
+// }
+
+// console.log(countDigits("22222s2d2s2sd2sd2s2ds2d"))
 
 
 
