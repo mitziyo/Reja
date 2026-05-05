@@ -55,7 +55,7 @@ document.addEventListener("click", function (e) {
     let userInput = prompt(
       "O'zgartrish kriting",
       e.target.parentElement.parentElement.querySelector(".item-text")
-        .innerHTML,
+        .innerHTML
     );
     if (userInput) {
       axios
@@ -69,7 +69,9 @@ document.addEventListener("click", function (e) {
             ".item-text",
           ).innerHTML = userInput;
         })
-        .catch((err) => {});
+        .catch((err) => {
+          console.log("Iltimos qaytadan urunib koring")
+        });
     }
   }
 });
