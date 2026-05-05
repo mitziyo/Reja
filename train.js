@@ -1,51 +1,57 @@
-//   TASK-C
-const moment = require("moment")
-const time = moment().format("HH:MM")
-class Shop {
+// TASK D
 
-    constructor(a, b, c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
-    }
+function checkContent(a, b) {
+  if (a.length === b.length) {
+    const aQiymat = a.split("");
+    const bQiymat = b.split("");
 
+    const aArray = aQiymat.sort();
+    const bArray = bQiymat.sort();
 
-
-    qoldiq() {
-        console.log(`Hozir ${time}da ${this.a}ta non, ${this.b}ta lagmon va ${this.c}ta cola mavjud`)
-    }
-
-    sotish(amount) {
-        this.a -= amount
-        console.log(`${amount} non sotildi`)
-    }
-
-
-
-    qabul(amount) {
-        this.c += amount
-        console.log(`${amount} cola qabul qlindi`)
-    }
+    return aArray.join("") === bArray.join("");
+  } else {
+    console.log("Hariflar soni togri emas")
+    return false;
+  }
 }
 
-const shop = new Shop(4, 5, 2)
+const result = checkContent("abbos", "abbos");
+console.log(result);
 
+// //   TASK-C
+// const moment = require("moment")
+// const time = moment().format("HH:MM")
+// class Shop {
 
-shop.qoldiq()
-shop.qabul(4)
-shop.sotish(2)
-shop.qoldiq()
+//     constructor(a, b, c) {
+//         this.a = a;
+//         this.b = b;
+//         this.c = c;
+//     }
 
+//     qoldiq() {
+//         console.log(`Hozir ${time}da ${this.a}ta non, ${this.b}ta lagmon va ${this.c}ta cola mavjud`)
+//     }
 
+//     sotish(amount) {
+//         this.a -= amount
+//         console.log(`${amount} non sotildi`)
+//     }
 
+//     qabul(amount) {
+//         this.c += amount
+//         console.log(`${amount} cola qabul qlindi`)
+//     }
+// }
 
+// const shop = new Shop(4, 5, 2)
 
+// shop.qoldiq()
+// shop.qabul(4)
+// shop.sotish(2)
+// shop.qoldiq()
 
-
-
-
-
-// Task B 
+// Task B
 // let count = 0;
 // function countDigits(word) {
 // for(let i = 0; i <= word.length; i++) {
@@ -57,9 +63,6 @@ shop.qoldiq()
 // }
 
 // console.log(countDigits("22222s2d2s2sd2sd2s2ds2d"))
-
-
-
 
 // // MiT Task A
 // let count = 0;
@@ -73,13 +76,6 @@ shop.qoldiq()
 // }
 // console.log(number("engineer", "e"));
 
-
-
-
-
-
-
-
 // console.log("Jack Ma Maslahatlari!");
 // const list = [
 //   "Yaxshi talaba bo'liing", // 0~20:
@@ -91,7 +87,7 @@ shop.qoldiq()
 // ];
 
 // function maslahatBering(a, callback) {
-//   if (typeof a !== "number") callback("insert a number", null);  
+//   if (typeof a !== "number") callback("insert a number", null);
 //   else if (a <= 20) callback(null, list[0]);
 //   else if (a > 20 && a <= 30) callback(null, list[1]);
 //   else if (a > 30 && a <= 40) callback(null, list[2]);
@@ -107,7 +103,7 @@ shop.qoldiq()
 // console.log("passed here 0");
 // maslahatBering(70, (err, data) => {
 //   if (err) console.log("ERROR", err);
- //   console.log("jaob:", data)
+//   console.log("jaob:", data)
 //   else {
 //     console.log(data);
 //   }
@@ -155,14 +151,3 @@ shop.qoldiq()
 //     console.log(javob);
 // }
 // run();
-
-
-
-
-
-
-
-
-
-
-

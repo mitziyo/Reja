@@ -1,3 +1,5 @@
+
+
 console.log("Hello Khan. FrontEnd JS ishga tushdi");
 
 function itemTemplate(item) {
@@ -16,7 +18,7 @@ function itemTemplate(item) {
 let createField = document.getElementById("create-field");
 document.getElementById("create-form").addEventListener("submit", function (e) {
   e.preventDefault();
-
+  console.log("2");
   axios
     .post("/create-item", { reja: createField.value })
     .then((response) => {
@@ -47,9 +49,34 @@ document.addEventListener("click", function (e) {
         });
     }
   }
-
+  console.log("2");
   // edit oper
   if (e.target.classList.contains("edit-me")) {
-    alert("You pressed edit button");
+    let userInput = prompt(
+      "O'zgartrish kriting",
+      e.target.parentElement.parentElement.querySelector(".item-text")
+        .innerHTML,
+    );
+    if (userInput) {
+      axios
+        .post("/edit-item", {
+          id: e.target.getAttribute("data-id"),
+          new_input: userInput,
+        })
+        .then((response) => {
+          console.log(response.data);
+          e.target.parentElement.parentElement.querySelector(
+            ".item-text",
+          ).innerHTML = userInput;
+        })
+        .catch((err) => {});
+    }
   }
 });
+
+document.getElementById("clean-all").addEventListener("click", function() {
+  axios.post("/delete-all", { delete_all: true}).then(respose => {
+    alert(respose.data.state)
+    document.location.reload()
+  })
+})
