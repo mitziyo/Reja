@@ -1,22 +1,43 @@
-// TASK D
+//  Task E
 
-function checkContent(a, b) {
-  if (a.length === b.length) {
-    const aQiymat = a.split("");
-    const bQiymat = b.split("");
-
-    const aArray = aQiymat.sort();
-    const bArray = bQiymat.sort();
-
-    return aArray.join("") === bArray.join("");
-  } else {
-    console.log("Hariflar soni togri emas")
-    return false;
-  }
+function getReverse(word) {
+  const wordReverse = word.split("")
+  const rev = wordReverse.reverse()
+  return getReverse = rev.join("")
 }
+const result = getReverse("hello")
+console.log("result:", result)
 
-const result = checkContent("abbos", "abbos");
-console.log(result);
+
+
+
+
+
+
+
+
+
+
+ 
+ // TASK D
+
+// function checkContent(a, b) {
+//   if (a.length === b.length) {
+//     const aQiymat = a.split("");
+//     const bQiymat = b.split("");
+
+//     const aArray = aQiymat.sort();
+//     const bArray = bQiymat.sort();
+
+//     return aArray.join("") === bArray.join("");
+//   } else {
+//     console.log("Hariflar soni togri emas")
+//     return false;
+//   }
+// }
+
+// const result = checkContent("abbos", "abbos");
+// console.log(result);
 
 // //   TASK-C
 // const moment = require("moment")
