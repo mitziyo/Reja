@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-//  Task E
-
-function getReverse(word) {
-  const wordReverse = word.split("")
-  const rev = wordReverse.reverse()
-  return getReverse = rev.join("")
-=======
 // Task H
 
 function getPositive(numbers) {
@@ -16,13 +8,10 @@ function getPositive(numbers) {
   return result;
   
   
->>>>>>> 1167f88 (feat: task H)
 }
 const result = getReverse("hello")
 console.log("result:", result)
 
-<<<<<<< HEAD
-=======
 
 console.log(getPositive([1, -4, 2, 3]));
 
@@ -34,6 +23,8 @@ console.log(getPositive([1, -4, 2, 3]));
 //     }
 // }
 // numbers.filter(tekshir);
+
+// console.log(********************************************)
 
 // Task G
 
@@ -62,7 +53,6 @@ console.log(getPositive([1, -4, 2, 3]));
 //         }
 //       }
 //     }
->>>>>>> 1167f88 (feat: task H)
 
 
 
