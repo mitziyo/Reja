@@ -1,13 +1,68 @@
+<<<<<<< HEAD
 //  Task E
 
 function getReverse(word) {
   const wordReverse = word.split("")
   const rev = wordReverse.reverse()
   return getReverse = rev.join("")
+=======
+// Task H
+
+function getPositive(numbers) {
+  const befilter = numbers.filter((num) => num > 0);
+  const bemap = befilter.map((num) => String(num));
+  const result = bemap.join("");
+
+  return result;
+  
+  
+>>>>>>> 1167f88 (feat: task H)
 }
 const result = getReverse("hello")
 console.log("result:", result)
 
+<<<<<<< HEAD
+=======
+
+console.log(getPositive([1, -4, 2, 3]));
+
+// function tekshir(num) {
+//     if (num > 0) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+// numbers.filter(tekshir);
+
+// Task G
+
+// function getHighestIndex(arr) {
+//   let maxValue = arr[0];
+//   let maxIndex = 0;
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > maxValue) {
+//       maxValue = arr[i];
+//       maxIndex = i;
+//     }
+//   }
+//   return maxIndex;
+// }
+
+// console.log(getHighestIndex([5, 21, 12, 21, 8]));
+// task F
+// function findDoublers(matn) {
+//   if (typeof matn === "string") {
+//     for (let i = 0; i < matn.length; i++) {
+//      // console.log(matn[i]);
+//       for (let j = 0; j < matn.length; j++) {
+//         if (matn[i] === matn[j] && i !== j) {
+//           return true;
+//         }
+//       }
+//     }
+>>>>>>> 1167f88 (feat: task H)
 
 
 
