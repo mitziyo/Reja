@@ -1,19 +1,42 @@
+// Task i
+
+function getMajority(arr) {
+  let counter = {};
+  for (let i = 0; i < arr.length; i++) {
+    if (counter[arr[i]]) {
+      counter[arr[i]] = counter[arr[i]] + 1;
+    } else {
+      counter[arr[i]] = 1;
+    }
+  }
+  let max = 0;
+  let result = null;
+
+  for (let key in counter) {
+    if (counter[key] > max) {
+      max = counter[key];
+      result = Number(key);
+    }
+  }
+  return result;   
+}
+
+console.log(getMajority([1, 2, 3, 4, 5, 4, 3, 4]));
+
 // Task H
 
-function getPositive(numbers) {
-  const befilter = numbers.filter((num) => num > 0);
-  const bemap = befilter.map((num) => String(num));
-  const result = bemap.join("");
+// function getPositive(numbers) {
+//   const befilter = numbers.filter((num) => num > 0);
+//   const bemap = befilter.map((num) => String(num));
+//   const result = bemap.join("");
 
-  return result;
-  
-  
-}
-const result = getReverse("hello")
-console.log("result:", result)
+//   return result;
 
+// }
+// const result = getReverse("hello")
+// console.log("result:", result)
 
-console.log(getPositive([1, -4, 2, 3]));
+// console.log(getPositive([1, -4, 2, 3]));
 
 // function tekshir(num) {
 //     if (num > 0) {
@@ -54,17 +77,7 @@ console.log(getPositive([1, -4, 2, 3]));
 //       }
 //     }
 
-
-
-
-
-
-
-
-
-
- 
- // TASK D
+// TASK D
 
 // function checkContent(a, b) {
 //   if (a.length === b.length) {
