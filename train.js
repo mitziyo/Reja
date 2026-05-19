@@ -1,27 +1,41 @@
-// Task i
-
-function getMajority(arr) {
-  let counter = {};
-  for (let i = 0; i < arr.length; i++) {
-    if (counter[arr[i]]) {
-      counter[arr[i]] = counter[arr[i]] + 1;
-    } else {
-      counter[arr[i]] = 1;
-    }
+function findLongestWord(str) {
+  const spred_word = str.split(" ");
+  let wordSave = "";
+  for (let i = 0; i < spred_word.length; i++) {
+    const currentWord = spred_word[i];
+    if (currentWord.length > wordSave.length) wordSave = currentWord;
   }
-  let max = 0;
-  let result = null;
-
-  for (let key in counter) {
-    if (counter[key] > max) {
-      max = counter[key];
-      result = Number(key);
-    }
-  }
-  return result;   
+  return wordSave;
 }
 
-console.log(getMajority([1, 2, 3, 4, 5, 4, 3, 4]));
+// String ichidagi eng uzun so'zni qaytarsin.
+
+const result = findLongestWord("I came from Uzbekistan!");
+console.log(result)
+// Task i
+
+// function getMajority(arr) {
+//   let counter = {};
+//   for (let i = 0; i < arr.length; i++) {
+//     if (counter[arr[i]]) {
+//       counter[arr[i]] = counter[arr[i]] + 1;
+//     } else {
+//       counter[arr[i]] = 1;
+//     }
+//   }
+//   let max = 0;
+//   let result = null;
+
+//   for (let key in counter) {
+//     if (counter[key] > max) {
+//       max = counter[key];
+//       result = Number(key);
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(getMajority([1, 2, 3, 4, 5, 4, 3, 4]));
 
 // Task H
 
