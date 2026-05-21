@@ -1,17 +1,38 @@
-function findLongestWord(str) {
-  const spred_word = str.split(" ");
-  let wordSave = "";
-  for (let i = 0; i < spred_word.length; i++) {
-    const currentWord = spred_word[i];
-    if (currentWord.length > wordSave.length) wordSave = currentWord;
+// TASK K
+
+function countVowels(str) {
+  let vowels = "aeiou";
+  let count = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i])) {
+      count++;
+    }
   }
-  return wordSave;
+  return count;
 }
+
+const result = countVowels("string");
+console.log(result);
+
+// Berilayotgan parametr tarkibida nechta unli harf bor ekanligini aniqlovchi function tuzing.
+// Masalan: countVowels("string") return 1
+
+// Task I
+// function findLongestWord(str) {
+//   const spred_word = str.split(" ");
+//   let wordSave = "";
+//   for (let i = 0; i < spred_word.length; i++) {
+//     const currentWord = spred_word[i];
+//     if (currentWord.length > wordSave.length) wordSave = currentWord;
+//   }
+//   return wordSave;
+// }
 
 // String ichidagi eng uzun so'zni qaytarsin.
 
-const result = findLongestWord("I came from Uzbekistan!");
-console.log(result)
+// const result = findLongestWord("I came from Uzbekistan!");
+// console.log(result)
 // Task i
 
 // function getMajority(arr) {
